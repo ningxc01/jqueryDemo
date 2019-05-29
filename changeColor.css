@@ -1,0 +1,18 @@
+@charset "UTF-8";
+body, html {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	border: 1px #53a323 solid;
+	width: 200px;
+}
+
+ul li {
+	margin-bottom: 10px;
+	margin-left: 0;
+	height: 50px;
+	background-color: #5bcd9f;
+	list-style: none;
+}
