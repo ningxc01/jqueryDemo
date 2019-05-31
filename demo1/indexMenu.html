@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>下拉列表</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="pull-down list" content="list">
+<meta name="keywords" content="">
+<script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
+<style type="text/css">
+	/*页面样式初始化*/
+	body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin: 0; padding: 0; }
+	body, button, input, select, textarea { font: 12px/1.5tahoma, arial, \5b8b\4f53; }
+	h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+	address, cite, dfn, em, var { font-style: normal; }
+	code, kbd, pre, samp { font-family: couriernew, courier, monospace; }
+	small { font-size: 12px; }
+	ul, ol { list-style: none; }
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	sup { vertical-align: text-top; }
+	sub { vertical-align: text-bottom; }
+	legend { color: #000; }
+	fieldset, img { border: 0; }
+	button, input, select, textarea { font-size: 100%; }
+	table { border-collapse: collapse; border-spacing: 0; }
+	/*swrapper*/
+	#wrapper{
+		width: 600px;
+		height: 600px;
+		/*background-color:#ADD8E6; */
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	li{
+		border: 1px #30CEB4FF solid;
+		-webkit-box-sizing:boder-box;
+		--moz-box-sizing: boder-box;
+		box-sizing: border-box;
+		border-radius: 50px;
+	}
+	/*一级菜单样式*/
+	#menu{
+		display: flex;
+		justify-content: space-between;
+		width: 350px;
+		height: 30px;
+		margin: 0 auto;
+		margin-top: 50px;
+	}
+	#menu>li{
+		list-style: none;
+		display:inline;
+		background-color: #30CEB4FF; 
+		/*padding: 10px 20px;*/
+		margin-right: 5px;
+		text-align: center;
+		width:150px;
+	}
+	/*二级菜单样式*/
+	.pullDownList{
+		display: none;
+		width:110px;
+		margin-top:10px;
+	}
+	.show{
+		display: block;
+	}
+	.pullDownList li{
+		background-color: #30CEB4FF;
+		text-align: center;
+		margin-top: 5px;
+		height: 20px;
+	}
+</style>
+</head>
+<body>
+    <nav id="wrapper">
+		<ul id="menu">
+			<li>一级菜单1
+				<ul class="pullDownList">
+					<li class="ListF">二级菜单</li>
+					<li class="ListF">二级菜单</li>
+					<li class="ListF">二级菜单</li>
+				</ul>
+			</li>
+			<li>一级菜单2
+				<ul class="pullDownList">
+					<li class="ListS">二级菜单</li>
+					<li class="ListS">二级菜单</li>
+					<li class="ListS">二级菜单</li>
+				</ul>
+			</li>
+			<li>一级菜单3
+				<ul class="pullDownList">
+					<li class="ListT">二级菜单</li>
+					<li class="ListT">二级菜单</li>
+					<li class="ListT">二级菜单</li>
+				</ul>
+			</li>
+		</ul>	
+    </nav>
+    <script type="text/javascript">
+
+    	$(document).ready(function(){
+    		$("#menu>li").mouseover(function(){
+    			$(this).children("ul").addClass("show")
+    		}).mouseleave(function(){
+    			$(".pullDownList").removeClass("show")
+    		})
+    	})
+    </script>
+</body>
+</html>
