@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>商品精选</title>
+<meta name="description" content="淘宝精品案例">
+<meta name="keywords" content="女装 毛衣 女裤 男靴">
+<link href="" rel="stylesheet">
+   <!--[if gte IE 9]><!-->
+  <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+  <!--<![endif]-->
+  <!--[if lt IE 9]>
+     <script src="//cdn.staticfile.org/jquery/1.9.1/jquery.min.js"></script>
+     <script src="//cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <![endif]-->
+
+  <style type="text/css">
+  	/*页面样式初始化*/
+	body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin: 0; padding: 0; }
+	body, button, input, select, textarea { font: 12px/1.5tahoma, arial, \5b8b\4f53; }
+	h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+	address, cite, dfn, em, var { font-style: normal; }
+	code, kbd, pre, samp { font-family: couriernew, courier, monospace; }
+	small { font-size: 12px; }
+	ul, ol { list-style: none;}
+	a { text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	sup { vertical-align: text-top; }
+	sub { vertical-align: text-bottom; }
+	legend { color: #000; }
+	fieldset, img { border: 0; }
+	button, input, select, textarea { font-size: 100%; }
+	table { border-collapse: collapse; border-spacing: 0; }
+	/*布局样式*/
+	#wrapper{
+		width: 300px;
+		height: 205px;
+		background-color: lightblue;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 200px;
+		bottom: 0;
+		margin: 0 auto;
+		display: flex;
+	}
+
+	#listLeft{
+		width: 60px;
+		/*background-color: pink;*/
+
+	}
+	#listRight{
+		width: 60px;
+		/*background-color:pink;*/
+	}
+	#content{
+		width: 180px;
+		background-color: gray;
+	}
+	/*listStyle*/
+	#leftWrap{
+		width: 60px;
+		text-align: center;
+	}
+	#rightWrap{
+		width: 60px;
+		text-align: center;
+	}
+	li{
+		border: 1px pink solid;	
+		box-sizing: content-box;
+		cursor: pointer;
+
+	}
+	/*内容展示区*/
+	#content{
+		background-image: url(image/img1.png);
+		background-size: cover;
+	}
+  </style>
+</head>
+<body>
+	<div id="wrapper">
+		<ul id="listLeft">
+			<div id="leftWrap">
+				<li>女装</li>
+				<li>女鞋</li>
+				<li>服饰</li>
+				<li>鞋子</li>
+				<li>帽子</li>
+				<li>围巾</li>
+				<li>裙装</li>
+				<li>卫衣</li>
+				<li>西装</li>
+			</div>
+		</ul>
+		<div id="content">
+		</div>
+		<ul id="listRight">
+			<div id="rightWrap">
+				<li>男装</li>
+				<li>男鞋</li>
+				<li>西装</li>
+				<li>衬衣</li>
+				<li>围巾</li>
+				<li>领带</li>
+				<li>手表</li>
+				<li>帽子</li>
+				<li>服饰</li>
+			</div>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$("#leftWrap>li").on("click",function(){
+					var num=$(this).index()+1
+				 $("#content").css("background-image","url(image/img"+num+".png)")
+				 console.log(num) 
+			})
+		})
+	</script>
+</body>
+</html>
